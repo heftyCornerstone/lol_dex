@@ -6,7 +6,7 @@ export interface ChampionsData {
 };
 
 export interface Champions {
-  [key: string]: Champion;
+  [champName: string]: Champion;
 };
 
 export interface Champion {
