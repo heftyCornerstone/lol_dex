@@ -10,7 +10,7 @@ export interface ItemData {
 }
 
 export interface Items {
-    [key: string]: ItemData;
+    [key: string]: Item;
   };
 
 interface Basic {
@@ -60,7 +60,7 @@ interface Tree {
   tags: string[];
 }
 
-export interface ItemData {
+export interface Item {
   name: string;
   description: string;
   colloq: string;
