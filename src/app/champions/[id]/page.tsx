@@ -2,11 +2,18 @@ import { fetchChampionDetails } from "@/utils/serverApi";
 import Image from "next/image";
 
 interface ChampionDetailProps {
-  params: {id:string}
+  params: { id: string };
 }
-//메타데이터 설정하기
+
+export function generateMetadata({ params }: ChampionDetailProps) {
+  return {
+    title: `LoL dex | Champion details`,
+    description: `Champion details on ${params.id}`,
+  };
+}
+
 const ChampionDetail = async ({ params }: ChampionDetailProps) => {
-  const {id:champId} = params;
+  const { id: champId } = params;
   const champDetailsObj = await fetchChampionDetails(champId);
   const champ = champDetailsObj[champId];
   return (

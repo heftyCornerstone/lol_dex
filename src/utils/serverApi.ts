@@ -37,7 +37,8 @@ export const fetchChampionDetails = async (id: string): Promise<ChampionDetailOb
   try {
     const newestVer: string = await getNewestVer();
     const detailsRes = await fetch(
-      `https://ddragon.leagueoflegends.com/cdn/${newestVer}/data/ko_KR/champion/${id}.json`
+      `https://ddragon.leagueoflegends.com/cdn/${newestVer}/data/ko_KR/champion/${id}.json`,
+      { cache: "no-store" }
     );
     const championDetailData: ChampionDetailData = await detailsRes.json();
     const championDetail: ChampionDetailObj = championDetailData.data;

@@ -11,7 +11,7 @@ export const revalidate = 86400;
 
 const ChampTest = ({ champ }: ChampTestProps) => {
   return (
-    <Link href={`champion_detail/${champ.id}`}>
+    <Link href={`champions/${champ.id}`}>
       <div>
         <div>
           <Image
