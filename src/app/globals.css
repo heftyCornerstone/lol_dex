@@ -4,8 +4,6 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,5 +27,46 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .lightMode {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    min-height: 100vh;
+  }
+  .darkMode {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    min-height: 100vh;
+    background-color: black;
+    color: white;
+  }
+  .lightHeader {
+    position: fixed;
+    width: 100vw;
+    max-width: 1536px;
+    height: 3.5rem;
+    border-bottom: 1px solid black;
+    color: black;
+    background-color: white;
+  }
+  .darkHeader {
+    position: fixed;
+    width: 100vw;
+    max-width: 1536px;
+    height: 3.5rem;
+    border-bottom: 1px solid white;
+    color: white;
+    background-color: black;
+  }
+  .modeToggleBtn {
+    padding: 5px 6px;
+    background-color: #e8ac07;
+    color: white;
+    font-weight: bold;
+    border-radius: 0.5rem;
   }
 }

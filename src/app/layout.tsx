@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers";
-
-const inter = Inter({ subsets: ["latin"] });
+import Navigationbar from "@/components/Navigationbar";
+import Header from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "LoL dex",
@@ -17,9 +16,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Providers>{children}</Providers>
+      <body className="darkMode">
+        <Header/>
+        <Providers>
+          <main className="max-w-screen-2xl pt-24">{children}</main>
+        </Providers>
       </body>
     </html>
   );
 }
+// bg-black text-white

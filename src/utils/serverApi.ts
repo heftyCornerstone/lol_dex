@@ -33,7 +33,14 @@ export const fetchChampions = async (): Promise<Champions> => {
   }
 };
 
-export const fetchChampionDetails = async (id: string): Promise<ChampionDetailObj> => {
+interface ChampionDetailsRes {
+  championDetail: ChampionDetailObj;
+  newestVer:string;
+}
+
+export const fetchChampionDetails = async (
+  id: string
+): Promise<ChampionDetailsRes> => {
   try {
     const newestVer: string = await getNewestVer();
     const detailsRes = await fetch(
@@ -43,13 +50,18 @@ export const fetchChampionDetails = async (id: string): Promise<ChampionDetailOb
     const championDetailData: ChampionDetailData = await detailsRes.json();
     const championDetail: ChampionDetailObj = championDetailData.data;
 
-    return championDetail;
+    return { championDetail, newestVer };
   } catch (error) {
     throw error;
   }
 };
 
-export const fetchItems = async (): Promise<Items> => {
+interface fetchItemsRespond {
+  items:Items;
+  newestVer:string;
+}
+
+export const fetchItems = async (): Promise<fetchItemsRespond> => {
   try {
     const newestVer: string = await getNewestVer();
     const itemsRes = await fetch(
@@ -58,7 +70,7 @@ export const fetchItems = async (): Promise<Items> => {
     const itemData: ItemData = await itemsRes.json();
     const items: Items = itemData.data;
 
-    return items;
+    return { items, newestVer };
   } catch (error) {
     throw error;
   }

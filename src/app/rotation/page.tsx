@@ -1,9 +1,9 @@
 "use client";
 
+import ChampCard from "@/components/ChampCard";
 import useRotationAndChamps from "@/hooks/useRotationAndChamps";
 import { Champion } from "@/types/Champion";
 import { ChampionRotation } from "@/types/ChampionRotation";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const Rotation = () => {
@@ -15,7 +15,9 @@ const Rotation = () => {
     const getTest = async () => {
       try {
         if (fetchedRotation && fetchedAllChamps) {
-          const rotationData: ChampionRotation = await fetchedRotation.json();
+          const rotationData: ChampionRotation = await fetchedRotation
+            .clone()
+            .json();
           const freeChamp: number[] = rotationData.freeChampionIds;
 
           const freeChampList: Champion[] = [];
@@ -40,27 +42,22 @@ const Rotation = () => {
   if (isDataError) return <div>Error!</div>;
 
   return (
-    <div>
-      {freeChamps &&
-        freeChamps.map((curChamp) => {
-          return (
-            <div key={curChamp.id}>
-              <div>
-                <Image
-                  src={`https://ddragon.leagueoflegends.com/cdn/14.24.1/img/champion/${curChamp.id}.png`}
-                  alt=""
-                  width={100}
-                  height={100}
-                />
-              </div>
-              <h6>{curChamp.name}</h6>
-              <div>{curChamp.title}</div>
-            </div>
-          );
-        })}
+    <div className="w-[90vw] max-w-screen-2xl mb-20 flex flex-col items-center gap-10">
+      <div className="w-7/12 pb-10 flex flex-col justify-center items-center gap-10 border-b-2 border-amber-400">
+        <h1 className="font-bold text-5xl">챔피언 로테이션</h1>
+        <div className="text-center">
+          <p>이번 주에 무료로 플레이할 수 있는 챔피언의 목록입니다.</p>
+          <p>각 항목을 클릭하면 상세페이지로 이동합니다.</p>
+        </div>
+      </div>
+      <div className="w-6/12 grid grid-cols-[repeat(auto-fit,minmax(100px,1fr))] justify-items-center gap-x-5 gap-y-10">
+        {freeChamps &&
+          freeChamps.map((curChamp) => (
+            <ChampCard key={curChamp.id} champ={curChamp} />
+          ))}
+      </div>
     </div>
   );
 };
 
 export default Rotation;
- 

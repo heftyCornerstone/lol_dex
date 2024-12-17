@@ -21,14 +21,14 @@ export interface ChampionDetail extends Omit<Champion, "version"> {
   recommended: [];
 }
 
-interface Skins {
+export interface Skins {
   id: string;
   num: number;
   name: string;
   chromas: boolean;
 };
 
-interface SpellsItem {
+export interface SpellsItem {
   id: string;
   name: string;
   description: string;
@@ -54,7 +54,7 @@ interface SpellsItem {
   resource: string;
 };
 
-type Passive = {
+export type Passive = {
   name: string;
   description: string;
   image: ChampionImage;
