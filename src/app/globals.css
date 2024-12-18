@@ -24,11 +24,14 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .homeTitle {
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 1;
   }
   .notFoundScreen {
     width: 100vw;
@@ -42,11 +45,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  @media (max-width: 768px) {
-    .notFoundImg {
-      width: 80vw;
-    }
   }
   .errorScreen {
     width: 100vw;
@@ -95,5 +93,14 @@ body {
     color: white;
     font-weight: bold;
     border-radius: 0.5rem;
+  }
+  @media (max-width: 768px) {
+    .homeTitle {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+    }
+    .notFoundImg {
+      width: 80vw;
+    }
   }
 }

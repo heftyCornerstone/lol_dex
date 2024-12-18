@@ -13,7 +13,7 @@ const AllChampions = async () => {
       <div className="w-[90vw] max-w-screen-2xl mb-20 flex flex-col items-center gap-10">
         <div className="w-7/12 pb-10 flex flex-col justify-center items-center gap-10 border-b-2 border-amber-400">
           <h1 className="font-bold text-5xl">모든 챔피언</h1>
-          <div className="text-center">
+          <div className="text-center break-keep">
             <p>모든 챔피언의 목록입니다.</p>
             <p>각 항목을 클릭하면 상세페이지로 이동합니다.</p>
           </div>

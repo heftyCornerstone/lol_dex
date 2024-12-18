@@ -21,7 +21,9 @@ interface ChampionInFoProps {
 const ChampionInFo = ({ champ }: ChampionInFoProps) => {
   const { lore, allytips, enemytips } = champ;
   const feature =
-    lore !== allytips[0] ? allytips : "아직 특징이 등록되지 않았습니다";
+    lore !== allytips[0] && allytips.length !== 0
+      ? allytips
+      : "아직 특징이 등록되지 않았습니다";
   const tips =
     enemytips.length !== 0 ? enemytips : "아직 팁이 등록되지 않았습니다";
 
@@ -47,7 +49,7 @@ const ChampionDetails = async ({ params }: ChampionDetailProps) => {
   const { id: champId } = params;
   const { championDetail, newestVer } = await fetchChampionDetails(champId);
   const champ = championDetail[champId];
-  //console.log(champ.enemytips.length);
+
   return (
     <div className="mb-20 flex flex-col items-center gap-20">
       <div className="flex flex-col items-center gap-5">

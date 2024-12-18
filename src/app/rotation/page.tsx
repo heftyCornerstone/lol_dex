@@ -4,8 +4,7 @@ import ChampCard from "@/components/ChampCard";
 import useRotationAndChamps from "@/hooks/useRotationAndChamps";
 import { Champion } from "@/types/Champion";
 import { ChampionRotation } from "@/types/ChampionRotation";
-import { Suspense, useEffect, useState } from "react";
-//import Loading from "./loading";
+import { useEffect, useState } from "react";
 
 const Rotation = () => {
   const [freeChamps, setFreeChamps] = useState<Champion[] | null>(null);
@@ -39,13 +38,11 @@ const Rotation = () => {
     getTest();
   }, [fetchedRotation, fetchedAllChamps]);
 
-  //throw new Error('error');
-
   return (
     <div className="w-[90vw] max-w-screen-2xl mb-20 flex flex-col items-center gap-10">
       <div className="w-7/12 pb-10 flex flex-col justify-center items-center gap-10 border-b-2 border-amber-400">
-        <h1 className="font-bold text-5xl">챔피언 로테이션</h1>
-        <div className="text-center">
+        <h1 className="font-bold text-5xl break-keep">챔피언 로테이션</h1>
+        <div className="text-center break-keep">
           <p>이번 주에 무료로 플레이할 수 있는 챔피언의 목록입니다.</p>
           <p>각 항목을 클릭하면 상세페이지로 이동합니다.</p>
         </div>
