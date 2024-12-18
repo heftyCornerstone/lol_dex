@@ -10,7 +10,7 @@ const ChampSpellCard = ({ spell, version }: SpellCardProps) => {
   const regex = /<.*?>/;
   const refinedDescription = description.split(regex).join(' ');
   return (
-    <div className="w-80 border border-amber-500">
+    <div className="w-80 border-2 border-amber-500">
       <div className="p-4 flex flex-col justify-center items-center gap-6">
         <div className="flex flex-col justify-center items-center gap-4">
           <Image

@@ -1,23 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Navigationbar from "./Navigationbar";
-import { useModeContext } from "@/app/providers/ModeStoreProvider";
+import ThemeSwitcher from "./ThemeSwitcher";
 
-interface HeaderProps {
-  mode:string;
-}
 const Header = () => {
-  //const { mode, changeMode } = useModeContext((state) => state);
-
-  // const handleMode = async () => {
-  // };
 
   return (
-    <header className='darkHeader'>
+    <header className="fixed w-screen max-w-screen-2xl h-14 border-b border-black bg-white dark:bg-black dark:border-white">
       <div className="px-10 flex items-center justify-between gap-10 h-full">
         <div>
-          <button type="button" className="modeToggleBtn">
-            Dark
-          </button>
+          <ThemeSwitcher/>
         </div>
         <Navigationbar />
       </div>

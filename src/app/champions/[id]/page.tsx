@@ -31,15 +31,21 @@ const ChampionInFo = ({ champ }: ChampionInFoProps) => {
     <div className="w-8/12 flex flex-col items-start gap-14">
       <div>
         <h6 className="mb-3 text-lg font-bold">소개</h6>
-        <p className="p-3 min-h-28 border border-black break-keep">{lore}</p>
+        <p className="p-3 min-h-28 border border-black break-keep dark:border-white">
+          {lore}
+        </p>
       </div>
       <div className="w-full">
         <h6 className="mb-3 text-lg font-bold">특징</h6>
-        <p className="p-3 min-h-28 border border-black break-keep">{feature}</p>
+        <p className="p-3 min-h-28 border border-black break-keep dark:border-white">
+          {feature}
+        </p>
       </div>
       <div className="w-full">
         <h6 className="mb-3 text-lg font-bold">적으로 만난다면 어떻게?</h6>
-        <p className="p-3 min-h-28 border border-black break-keep">{tips}</p>
+        <p className="p-3 min-h-28 border border-black break-keep dark:border-white">
+          {tips}
+        </p>
       </div>
     </div>
   );
