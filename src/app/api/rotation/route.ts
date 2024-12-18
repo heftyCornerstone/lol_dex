@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   const url = "https://kr.api.riotgames.com/lol/platform/v3/champion-rotations";
-  const token = process.env.RIOT_API_KEY;
+  const token = process.env.NEXT_PUBLIC_RIOT_API_KEY;
 
   try {
     if (!token)
