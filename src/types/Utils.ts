@@ -6,7 +6,7 @@ export interface ChampionDetailsRes {
   newestVer: string;
 }
 
-export  interface fetchItemsRespond {
+export  interface FetchItemsRespond {
   items: Items;
   newestVer: string;
 }

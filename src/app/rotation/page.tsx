@@ -3,7 +3,6 @@
 import ChampCard from "@/components/ChampCard";
 import useRotationAndChamps from "@/hooks/useRotationAndChamps";
 import { Champion } from "@/types/Champion";
-import { ChampionRotation } from "@/types/ChampionRotation";
 import { useEffect, useState } from "react";
 
 const Rotation = () => {

@@ -4,7 +4,7 @@ import { ChampionDetailObj } from "./../types/ChampionDetail";
 import { ChampionDetailData } from "@/types/ChampionDetail";
 import { Champions, ChampionsData } from "./../types/Champion";
 import { ItemData, Items } from "@/types/Item";
-import { ChampionDetailsRes, fetchItemsRespond } from "@/types/Utils";
+import { ChampionDetailsRes, FetchItemsRespond } from "@/types/Utils";
 
 const getNewestVer = async (): Promise<string> => {
   try {
@@ -52,7 +52,7 @@ export const fetchChampionDetails = async (
   }
 };
 
-export const fetchItems = async (): Promise<fetchItemsRespond> => {
+export const fetchItems = async (): Promise<FetchItemsRespond> => {
   try {
     const newestVer: string = await getNewestVer();
     const itemsRes = await fetch(
