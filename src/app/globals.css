@@ -24,9 +24,36 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .notFoundScreen {
+    width: 100vw;
+    height: calc(100vh - 6rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .notFoundImg {
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @media (max-width: 768px) {
+    .notFoundImg {
+      width: 80vw;
+    }
+  }
+  .errorScreen {
+    width: 100vw;
+    height: calc(100vh - 6rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .lightMode {
     display: flex;

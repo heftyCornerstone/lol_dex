@@ -4,6 +4,7 @@ import { ChampionDetailObj } from "./../types/ChampionDetail";
 import { ChampionDetailData } from "@/types/ChampionDetail";
 import { Champions, ChampionsData } from "./../types/Champion";
 import { ItemData, Items } from "@/types/Item";
+import { ChampionDetailsRes, fetchItemsRespond } from "@/types/Utils";
 
 const getNewestVer = async (): Promise<string> => {
   try {
@@ -33,11 +34,6 @@ export const fetchChampions = async (): Promise<Champions> => {
   }
 };
 
-interface ChampionDetailsRes {
-  championDetail: ChampionDetailObj;
-  newestVer:string;
-}
-
 export const fetchChampionDetails = async (
   id: string
 ): Promise<ChampionDetailsRes> => {
@@ -55,11 +51,6 @@ export const fetchChampionDetails = async (
     throw error;
   }
 };
-
-interface fetchItemsRespond {
-  items:Items;
-  newestVer:string;
-}
 
 export const fetchItems = async (): Promise<fetchItemsRespond> => {
   try {

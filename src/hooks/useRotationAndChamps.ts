@@ -18,18 +18,15 @@ const useRotationAndChamps = () => {
   const {
     data: fetchedRotation,
     isPending: isRotationPending,
-    isError: isRotationErr,
   } = rotation;
   const {
     data: fetchedAllChamps,
     isPending: isAllChampsPending,
-    isError: isAllChampsErr,
   } = allChamps;
 
   const isDataPending = !!(isRotationPending || isAllChampsPending);
-  const isDataError = !!(isRotationErr || isAllChampsErr);
 
-  return { fetchedRotation, fetchedAllChamps, isDataPending, isDataError };
+  return { fetchedRotation, fetchedAllChamps, isDataPending };
 };
 
 export default useRotationAndChamps;

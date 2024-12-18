@@ -19,7 +19,7 @@ export default function RootLayout({
       <body>
         <Providers>
             <Header/>
-            <main className="darkMode max-w-screen-2xl pt-24">{children}</main>
+            <main className="lightMode max-w-screen-2xl pt-24">{children}</main>
         </Providers>
       </body>
     </html>

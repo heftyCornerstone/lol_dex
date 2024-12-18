@@ -1,10 +1,11 @@
-import { StateObjType } from "@/app/item_details/[id]/page";
+import { StateObjType } from "@/app/items/[id]/page";
 
-interface ItemStateTable {
+
+interface ItemStateTableProps {
     statesArr : StateObjType[];
 }
 
-const ItemStateTable = ({ statesArr }: ItemStateTable) => {
+const ItemStateTable = ({ statesArr }: ItemStateTableProps) => {
   return (
     <div className="w-3/12 flex flex-col items-start gap-3">
       <h6 className="text-lg font-bold">스탯</h6>
