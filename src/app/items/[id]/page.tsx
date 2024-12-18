@@ -40,7 +40,7 @@ const ItemDetail = async ({ params }: ItemDetailProps) => {
         />
         <h6 className="text-xl font-bold">{itemName}</h6>
       </div>
-      <ItemStateTable statesArr={statesArr}/>
+      <ItemStateTable statesArr={statesArr} />
     </div>
   );
 };

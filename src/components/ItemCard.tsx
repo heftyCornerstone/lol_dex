@@ -11,7 +11,7 @@ const ItemCard = ({ itemId, itemName, version }: ItemTestProps) => {
   const regex = /<.*?>/;
   const newname = itemName.split(regex).filter((cur)=>cur!=="")[0];
   return (
-    <Link href={`/item_details/${itemId}`}>
+    <Link href={`/items/${itemId}`}>
       <div className="w-32 flex flex-col items-center justify-center gap-3">
         <div>
           <Image

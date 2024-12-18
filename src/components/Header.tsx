@@ -1,27 +1,22 @@
-"use client";
-
 import React, { useEffect, useState } from "react";
 import Navigationbar from "./Navigationbar";
+import { useModeContext } from "@/app/providers/ModeStoreProvider";
 
+interface HeaderProps {
+  mode:string;
+}
 const Header = () => {
-  const [mode, setMode] = useState<boolean>(false);
+  //const { mode, changeMode } = useModeContext((state) => state);
 
-  const handleMode = async () => {
-    setMode((prev) => !prev);
-  };
-
-  useEffect(() => {
-    const isDarkMode = localStorage.getItem("isDarkMode");
-    if (isDarkMode === null) window.localStorage.setItem("isDarkMode", "false");
-    isDarkMode === "false" ? setMode(false) : setMode(true);
-  }, []);
+  // const handleMode = async () => {
+  // };
 
   return (
-    <header className="lightHeader">
+    <header className='darkHeader'>
       <div className="px-10 flex items-center justify-between gap-10 h-full">
         <div>
           <button type="button" className="modeToggleBtn">
-            {mode ? "Dark" : "Light"}
+            Dark
           </button>
         </div>
         <Navigationbar />

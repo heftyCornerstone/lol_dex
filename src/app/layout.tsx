@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Providers from "./providers";
-import Navigationbar from "@/components/Navigationbar";
+import Providers from "./providers/TQprovider";
 import Header from "@/components/Header";
 
 export const metadata: Metadata = {
@@ -14,15 +13,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
-      <body className="darkMode">
-        <Header/>
+      <body>
         <Providers>
-          <main className="max-w-screen-2xl pt-24">{children}</main>
+            <Header/>
+            <main className="darkMode max-w-screen-2xl pt-24">{children}</main>
         </Providers>
       </body>
     </html>
   );
 }
-// bg-black text-white
