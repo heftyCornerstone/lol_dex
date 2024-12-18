@@ -15,8 +15,6 @@ const Rotation = () => {
     const getTest = async () => {
       try {
         if (fetchedRotation && fetchedAllChamps) {
-          console.log("fetched", fetchedRotation , fetchedAllChamps);
-
           const freeChamp: number[] = fetchedRotation.freeChampionIds;
 
           const freeChampList: Champion[] = [];
