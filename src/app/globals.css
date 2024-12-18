@@ -59,22 +59,6 @@ body {
     justify-content: center;
     align-items: center;
   }
-  .darkMode {
-    background-color: black;
-    color: white;
-  }
-
-  .lightHeader {
-    border-bottom: 1px solid black;
-    color: black;
-    background-color: white;
-  }
-  .darkHeader {
-    border-bottom: 1px solid white;
-    color: white;
-    background-color: black;
-  }
-  
   .modeToggleBtn {
     padding: 5px 6px;
     background-color: #e8ac07;
