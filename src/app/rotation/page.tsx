@@ -15,10 +15,9 @@ const Rotation = () => {
     const getTest = async () => {
       try {
         if (fetchedRotation && fetchedAllChamps) {
-          const rotationData: ChampionRotation = await fetchedRotation
-            .clone()
-            .json();
-          const freeChamp: number[] = rotationData.freeChampionIds;
+          console.log("fetched", fetchedRotation , fetchedAllChamps);
+
+          const freeChamp: number[] = fetchedRotation.freeChampionIds;
 
           const freeChampList: Champion[] = [];
           for (const champName in fetchedAllChamps) {
