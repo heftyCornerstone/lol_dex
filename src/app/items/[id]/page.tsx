@@ -1,4 +1,4 @@
-import ItemStateTable from "@/components/ItemStateTable";
+import ItemStateTable from "@/components/itemPage/ItemStateTable";
 import { fetchItems } from "@/utils/serverApi";
 import Image from "next/image";
 

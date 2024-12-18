@@ -1,5 +1,5 @@
-import ChampSpellCard from "@/components/ChampSpellCard";
-import { ChampionDetail } from "@/types/ChampionDetail";
+import ChampionInfo from "@/components/detailPage/ChampInfo";
+import ChampSpellCard from "@/components/detailPage/ChampSpellCard";
 import { fetchChampionDetails } from "@/utils/serverApi";
 import Image from "next/image";
 
@@ -13,43 +13,6 @@ export function generateMetadata({ params }: ChampionDetailProps) {
     description: `Champion details on ${params.id}`,
   };
 }
-
-interface ChampionInFoProps {
-  champ: ChampionDetail;
-}
-
-const ChampionInFo = ({ champ }: ChampionInFoProps) => {
-  const { lore, allytips, enemytips } = champ;
-  const feature =
-    lore !== allytips[0] && allytips.length !== 0
-      ? allytips
-      : "아직 특징이 등록되지 않았습니다";
-  const tips =
-    enemytips.length !== 0 ? enemytips : "아직 팁이 등록되지 않았습니다";
-
-  return (
-    <div className="w-8/12 flex flex-col items-start gap-14">
-      <div>
-        <h6 className="mb-3 text-lg font-bold">소개</h6>
-        <p className="p-3 min-h-28 border border-black break-keep dark:border-white">
-          {lore}
-        </p>
-      </div>
-      <div className="w-full">
-        <h6 className="mb-3 text-lg font-bold">특징</h6>
-        <p className="p-3 min-h-28 border border-black break-keep dark:border-white">
-          {feature}
-        </p>
-      </div>
-      <div className="w-full">
-        <h6 className="mb-3 text-lg font-bold">적으로 만난다면 어떻게?</h6>
-        <p className="p-3 min-h-28 border border-black break-keep dark:border-white">
-          {tips}
-        </p>
-      </div>
-    </div>
-  );
-};
 
 const ChampionDetails = async ({ params }: ChampionDetailProps) => {
   const { id: champId } = params;
@@ -70,7 +33,7 @@ const ChampionDetails = async ({ params }: ChampionDetailProps) => {
           <div className="text-sm text-gray-500">{champ.title}</div>
         </div>
       </div>
-      <ChampionInFo champ={champ} />
+      <ChampionInfo champ={champ} />
       <div className="w-8/12">
         <h6 className="mb-3 text-lg font-bold">스킬</h6>
         <div className="w-full grid grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-x-5 gap-y-10">

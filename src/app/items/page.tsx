@@ -1,4 +1,4 @@
-import ItemCard from "@/components/ItemCard";
+import ItemCard from "@/components/itemPage/ItemCard";
 import { Item } from "@/types/Item";
 import { fetchItems } from "@/utils/serverApi";
 
