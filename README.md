@@ -97,7 +97,7 @@
 ### Items/[id]
 
 <p align="center">
-  <img src="https://velog.velcdn.com/images/heftycornerstone/post/4221a269-46f2-4f55-bfa7-13639b7b812d/image.png" width="70%"/>
+  <img src="https://velog.velcdn.com/images/heftycornerstone/post/4221a269-46f2-4f55-bfa7-13639b7b812d/image.png" width="50%"/>
 </p>
 <br>
 아이템의 이름과 스탯 정리표를 보여줍니다.
